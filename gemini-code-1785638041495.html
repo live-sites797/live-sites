@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Sites Profissionais</title>
+    <style>
+        /* Estilos Gerais e Cores (Preto, Roxo, Azul) */
+        :root {
+            --bg-black: #0d0e15;
+            --card-bg: #161824;
+            --purple-main: #8a2be2;
+            --blue-main: #00d2ff;
+            --text-color: #ffffff;
+            --text-secondary: #a0a5c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Cabecalho / Hero Section */
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(180deg, rgba(138,43,226,0.15) 0%, rgba(13,14,21,1) 100%);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--blue-main), var(--purple-main));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* SESSÃO DE PREÇOS / PLANOS */
+        .pricing-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .pricing-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cartões dos Planos */
+        .price-card {
+            background-color: var(--card-bg);
+            border: 2px solid #232738;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--purple-main);
+        }
+
+        /* Destaque para o Plano Médio */
+        .price-card.featured {
+            border-color: var(--blue-main);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--purple-main), var(--blue-main));
+            color: #fff;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .plan-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: var(--blue-main);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Botão de Ação */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(90deg, var(--purple-main), var(--blue-main));
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #1a1d2d;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho do Site -->
+    <header>
+        <h1>Desenvolvimento de Sites Profissionais</h1>
+        <p>Aumente sua presença online com um site moderno, rápido e otimizado para o seu negócio.</p>
+    </header>
+
+    <!-- Seção de Tabela de Preços -->
+    <section class="pricing-section">
+        <h2 class="pricing-title">Escolha o plano ideal para você</h2>
+
+        <div class="pricing-grid">
+            
+            <!-- PLANO BÁSICO -->
+            <div class="price-card">
+                <div>
+                    <h3 class="plan-title">Básico</h3>
+                    <div class="price">R$ 600</div>
+                    <ul class="features-list">
+                        <li>Site de Página Única (Landing Page)</li>
+                        <li>Design Responsivo (Celular/PC)</li>
+                        <li>Botão direto para o WhatsApp</li>
+                        <li>Otimização básica de velocidade</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn">Pedir Plano Básico</a>
+            </div>
+
+            <!-- PLANO MÉDIO (DESTAQUE) -->
+            <div class="price-card featured">
+                <div class="badge">Mais Popular</div>
+                <div>
+                    <h3 class="plan-title">Médio</h3>
+                    <div class="price">R$ 1.000</div>
+                    <ul class="features-list">
+                        <li>Até 3 Páginas (Início, Sobre, Serviços)</li>
+                        <li>Design Personalizado e Responsivo</li>
+                        <li>Integração com Redes Sociais</li>
+                        <li>Formulário de Contato</li>
+                        <li>Otimização para o Google (SEO)</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn">Pedir Plano Médio</a>
+            </div>
+
+            <!-- PLANO COMPLETO -->
+            <div class="price-card">
+                <div>
+                    <h3 class="plan-title">Completo</h3>
+                    <div class="price">R$ 1.350</div>
+                    <ul class="features-list">
+                        <li>Site Multi-páginas Completo</li>
+                        <li>Design Exclusivo e Alta Performance</li>
+                        <li>Blog ou Catálogo de Produtos</li>
+                        <li>Otimização Completa de SEO</li>
+                        <li>Suporte e Treinamento de uso</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn">Pedir Plano Completo</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Seu Nome ou Sua Empresa. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
